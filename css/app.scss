@@ -1,0 +1,13 @@
+$bodyBackground: lime;
+
+body {
+    padding: 2rem;
+  }
+
+.App {
+    background-color: $bodyBackground;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 1em;
+}
