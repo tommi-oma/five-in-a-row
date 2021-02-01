@@ -1,13 +1,56 @@
-$bodyBackground: lime;
+$boardBackground: black;
 
 body {
     padding: 2rem;
-  }
+}
 
 .App {
-    background-color: $bodyBackground;
-    width: 90%;
     margin-left: auto;
     margin-right: auto;
     padding: 1em;
+    background-color: aqua;
+}
+
+.Board {
+    background-color: $boardBackground;
+    width: 800px;
+    background-image: linear-gradient(#333 1px, transparent 1px), linear-gradient(90deg, #333 1px, transparent 1px);
+    position: relative;
+}
+
+@mixin Cell {
+    position: absolute;
+    display: inline-block;
+} 
+.BlueCell {  
+    @include Cell;
+    background-color: blue;
+}
+.RedCell {  
+    @include Cell;
+    background-color: red;
+}
+
+@keyframes chosenBlue {
+    from {background-color: white;}
+    to {background-color: blue;}
+  }
+
+.ChosenBlueCell {
+    animation-name: chosenBlue;
+    animation-duration: 2s;
+    animation-iteration-count: 4;
+    animation-direction: reverse;
+}
+
+@keyframes chosenRed {
+    from {background-color: white;}
+    to {background-color: darker(red);}
+  }
+
+.ChosenRedCell {
+    animation-name: chosenRed;
+    animation-duration: 2s;
+    animation-iteration-count: 4;
+    animation-direction: reverse;
 }
